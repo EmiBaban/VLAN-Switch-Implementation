@@ -1,0 +1,20 @@
+1 2
+
+Tema 1 - Implementare Switch
+
+Baban Mihai-Emilian
+334CD
+
+-Am creat o clasa MyInterface in care am retinut numele si vlan_id-ul unei
+ interfete din fisierul de configurare specific switch-ului
+-add_vlan_tag(data, vlan_tag), delete_vlan_tag(data): adauga si sterg tagul din data
+-findInterface(name, switch_interfaces): cauta si returneaza interfata din vectorul de obiecte
+ MyInterface
+
+-Cand switch-ul primeste un pachet de pe un host, iau vlan_id din fisierul de configurare.
+ Daca se duce pe o interfata de tip trunk se adauga tagul, iar daca se duce pe o interfata
+  de tip access si vlan id egal cu cel al interfetei de pe care a venit se trimite nemodificat
+-Cand switch-ul primeste un pachet de pe o interfata de tip trunk, iau vlan_id din tag.
+ Daca se duce pe o interfata de tip trunk se trimite cu tot cu tag, iar daca se duce o 
+ interfata de tip access si vlan id egal cu cel al interfetei de pe care a venit sterg tagul
+-cand mac-ul destinatie se afla in tabela mac, trimit pachetul catre destinatie
